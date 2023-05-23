@@ -1,0 +1,3 @@
+npm init -y  //third party package //y for ignore command step by step ignore
+npm install express  //express er help e server make
+node src/server.js---initial server load
