@@ -20,7 +20,7 @@
 
 9. How to handle HTTP errors --> http-errors
 
-##How to secure API -->xss-clean, express-rate-limit //google
+10. How to secure API -->xss-clean, express-rate-limit //google
 
 ##Environment variable & .gitignore
 
