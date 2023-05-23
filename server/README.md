@@ -1,22 +1,22 @@
 #E-commerce mern stack project
 
-##Course plan
+1. Course plan
 
-##Environment setup done
+2. Environment setup done
 
-##Express server setup
+## Express server setup
 
-##Create express server
+3. Create express server
 
-##HTTP request $ response
+4. HTTP request $ response
 
-##nodemon and morgan package
+5. nodemon and morgan package
 
-##API testing with posrman
+6. API testing with posrman
 
-##Middleware
+7. Middleware & types of Middleware
 
-##Express error handeling Middleware
+8. Express error handeling Middleware
 
 ##How to handle HTTP errors --> http-errors
 
