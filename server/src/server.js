@@ -7,7 +7,22 @@ app.use(morgan("dev"));  //
 
 app.get("/test", (request, response)=>{
     response.status(200).send({
-        message: "API is testing fine",
+        message: "API testing is testing fine",
+    });
+});
+app.post("/test", (request, response)=>{
+    response.status(200).send({
+        message: "post: API testing is testing fine",
+    });
+});
+app.put("/test", (request, response)=>{
+    response.status(200).send({
+        message: "put: API testing is testing fine",
+    });
+});
+app.delete("/test", (request, response)=>{
+    response.status(200).send({
+        message: "delete: API testing is testing fine",
     });
 });
 
