@@ -1,0 +1,7 @@
+npm init -y  //third party package //y for ignore command step by step ignore
+npm install express  //express er help e server make
+node src/server.js---initial server load
+npm i --save-dev nodemon  //autometic restart kore ...--save-dev for development purpose
+npm i --save-dev morgan  //request ki asche server/terminal take check--get,post,put,patch,delete...--save-dev for development purpose
+
+
