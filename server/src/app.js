@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const createError = require('http-errors');
 const xssClean = require('xss-clean');
 const rateLimit = require('express-rate-limit');
+const userRouter = require('./routers/userRouter');
+
 
 const app = express();
 
@@ -19,20 +21,14 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());  //json data
 app.use(bodyParser.urlencoded({extended: true}));  //form releted data build in method
 
-
+app.use("/api/users",userRouter);
 
 app.get('/test', (request, response)=>{
     response.status(200).send({
         message: "API testing is testing fine",
     });
 });
-app.get('/api/user', (request, response)=>{
-    console.log(request.body.id);
-    // console.log('user Profile');
-    response.status(200).send({
-        message: "User profile is returm",
-    });
-});
+
 
 //Cliend error handeling
 app.use((request, response, next)=>{
