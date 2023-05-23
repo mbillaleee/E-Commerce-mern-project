@@ -22,6 +22,6 @@
 
 10. How to secure API -->xss-clean, express-rate-limit //google
 
-##Environment variable & .gitignore
+11. Environment variable & .gitignore
 
 ##MVC Architecture
