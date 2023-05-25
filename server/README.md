@@ -6,17 +6,17 @@
 
 ## Express server setup
 
-3. Create express server  -->express
+3. Create express server -->express
 
 4. HTTP request $ response
 
-5. nodemon and morgan package  -->nodemon, morgan
+5. nodemon and morgan package -->nodemon, morgan
 
 6. API testing with posrman
 
 7. Middleware & types of Middleware
 
-8. Express error handeling Middleware  -->body-parser
+8. Express error handeling Middleware -->body-parser
 
 9. How to handle HTTP errors --> http-errors
 
@@ -31,3 +31,7 @@
 14. Schema & Model for user
 
 15. Create seed route for testing
+
+16. GET /api/users ->isAdmin -> getAllUser -> searchByName + pagination functionality
+
+17. responseHandler controller for error or swuccess
