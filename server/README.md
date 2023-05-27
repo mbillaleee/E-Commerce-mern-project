@@ -25,7 +25,7 @@
 11. Environment variable & .gitignore
 
 12. MVC Architecture
-
+ 
 13. connect to mongoDB database
 
 14. Schema & Model for user
@@ -35,3 +35,5 @@
 16. GET /api/users ->isAdmin -> getAllUser -> searchByName + pagination functionality
 
 17. responseHandler controller for error or swuccess
+
+18. GET / api/users/:id -->get a single user by id
