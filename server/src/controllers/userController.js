@@ -2,6 +2,7 @@ const createError = require('http-errors');
 const User = require("../models/userModel");
 const { successResponse } = require('./responseController');
 const { default: mongoose } = require('mongoose');
+const { findUserById } = require('../services/findUserById');
 
 
 //GET: api/users
@@ -50,22 +51,14 @@ const getUsers = async (request, response, next)=>{
 const getUser = async (request, response, next)=>{
     try{
         const id = request.params.id;
-        const option = {password: 0};
-        const user = await User.findById(id, option);
-
-        if(!user){
-            throw createError(404, 'User does not exist with this id');
-        }
+        const user =await findUserById(id);
+        
         return successResponse(response, {
             statusCode: 200,
             message: 'Users were return successfully',
             payload: { user },
         });
     }catch(error){
-        if(error instanceof mongoose.Error){
-            next(createError(404, 'Invalid user ID'))
-            return;
-        }
         next(error);
     }
 }
