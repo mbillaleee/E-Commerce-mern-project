@@ -41,3 +41,5 @@
 19. How to create services in backend
 
 20. Delete api/users/:id -->delete a single user by id
+
+21. Refactoring & reusability, dynamic

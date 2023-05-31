@@ -49,11 +49,11 @@ const getUsers = async (request, response, next) => {
     next(error);
   }
 };
-const getUser = async (request, response, next) => {
+const getUserById = async (request, response, next) => {
   try {
     const id = request.params.id;
     const options = { password: 0 };
-    const user = await findWithId(id, options);
+    const user = await findWithId(User, id, options);
 
     return successResponse(response, {
       statusCode: 200,
@@ -64,11 +64,11 @@ const getUser = async (request, response, next) => {
     next(error);
   }
 };
-const deleteUser = async (request, response, next) => {
+const deleteUserById = async (request, response, next) => {
   try {
     const id = request.params.id;
     const options = { password: 0 };
-    const user = await findWithId(id, options);
+    const user = await findWithId(User, id, options);
 
     const userImagePath = user.image;
     fs.access(userImagePath, (error) => {
@@ -97,4 +97,4 @@ const deleteUser = async (request, response, next) => {
   }
 };
 
-module.exports = { getUsers, getUser, deleteUser };
+module.exports = { getUsers, getUserById, deleteUserById };
