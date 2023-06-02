@@ -1,7 +1,7 @@
 const createError = require("http-errors");
 const User = require("../models/userModel");
 const { default: mongoose } = require("mongoose");
-
+ 
 const findWithId = async (Model, id, options = {}) => {
   try {
    

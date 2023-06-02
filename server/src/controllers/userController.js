@@ -1,9 +1,10 @@
 const createError = require("http-errors");
-const fs = require("fs");
+const fs = require("fs").promises;
 const User = require("../models/userModel");
 const { successResponse } = require("./responseController");
 
 const { findWithId } = require("../services/findItem");
+const { deleteImage } = require("../helper/deleteImage");
 
 //GET: api/users
 const getUsers = async (request, response, next) => {
@@ -60,7 +61,7 @@ const getUserById = async (request, response, next) => {
       message: "Users was return successfully",
       payload: { user },
     });
-  } catch (error) {
+  } catch (error) { 
     next(error);
   }
 };
@@ -71,16 +72,9 @@ const deleteUserById = async (request, response, next) => {
     const user = await findWithId(User, id, options);
 
     const userImagePath = user.image;
-    fs.access(userImagePath, (error) => {
-      if (error) {
-        console.error("User does not exist");
-      }else {
-        fs.unlink(userImagePath, (error) => {
-          if (error) throw error;
-          console.log("User image was deleted");
-        });
-      }
-    });
+
+    deleteImage(userImagePath);
+
 
     await User.findByIdAndDelete({
         _id:id,

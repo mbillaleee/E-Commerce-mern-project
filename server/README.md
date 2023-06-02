@@ -43,3 +43,5 @@
 20. Delete api/users/:id -->delete a single user by id
 
 21. Refactoring & reusability, dynamic
+
+22. deleteImage helper

@@ -7,6 +7,6 @@ userRouter.get('/', getUsers);
 userRouter.get('/:id', getUserById);
 userRouter.delete('/:id', deleteUserById);
 
-
+ 
 
 module.exports = userRouter;
