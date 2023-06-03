@@ -61,10 +61,11 @@ const getUserById = async (request, response, next) => {
       message: "Users was return successfully",
       payload: { user },
     });
-  } catch (error) { 
+  } catch (error) {
     next(error);
   }
 };
+
 const deleteUserById = async (request, response, next) => {
   try {
     const id = request.params.id;
@@ -75,12 +76,10 @@ const deleteUserById = async (request, response, next) => {
 
     deleteImage(userImagePath);
 
-
     await User.findByIdAndDelete({
-        _id:id,
-        isAdmin: false
+      _id: id,
+      isAdmin: false,
     });
-
 
     return successResponse(response, {
       statusCode: 200,
@@ -90,5 +89,35 @@ const deleteUserById = async (request, response, next) => {
     next(error);
   }
 };
+const processRegister = async (request, response, next) => {
+  try {
+    const { name, email, password, phone, address } = request.body;
 
-module.exports = { getUsers, getUserById, deleteUserById };
+    const userExists = await User.exists({ email: email });
+
+    if (userExists) {
+      throw createError(
+        409,
+        "User with this email all ready exist. Please login"
+      );
+    }
+
+    const newUser = {
+      name,
+      email,
+      password,
+      phone,
+      address,
+    };
+
+    return successResponse(response, {
+      statusCode: 200,
+      message: "Users was created successfully",
+      payload: { newUser },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = { getUsers, getUserById, deleteUserById, processRegister };
