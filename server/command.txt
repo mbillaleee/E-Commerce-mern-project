@@ -11,3 +11,4 @@ npm install express-rate-limit  //  login limit
 npm install dotenv  //
 npm install mongoose  //
 npm in stall bcrypt // password hash
+npm i jsonwebtoken -----check 
