@@ -12,3 +12,4 @@ npm install dotenv  //
 npm install mongoose  //
 npm in stall bcrypt // password hash
 npm i jsonwebtoken -----check 
+npm install nodemailer  --      //password:avuilgzqhluxpmwk

@@ -111,6 +111,17 @@ const processRegister = async (request, response, next) => {
     );
     console.log(token);
 
+    //prepare email
+      const emailData = {
+        email,
+        subject: 'Account activation email',
+        html:`
+          <h2>Hellow ${name} !</h2>
+          <p>Please click here to <a href="${clientURL}/api/users/activate/${token}" target="_blank">activate your account </a> </p>
+        `
+      }
+    //send mail with nodemailer
+
     return successResponse(response, {
       statusCode: 200,
       message: "Users was created successfully",

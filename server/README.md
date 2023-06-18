@@ -49,3 +49,5 @@
 23. POST api/users/process-register -->process register
 
 23. POST api/users/verify -->verify +  register into database
+
+24. 

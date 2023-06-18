@@ -5,4 +5,9 @@ const defaultImagePath = process.env.DEFAULT_USER_IMAGE_PATH || 'public/images/u
 
 const jwtActivationKey = process.env.JWT_ACTIVATION_KEY || 'ABCDEFGH12345';
 
-module.exports = {serverPort, mongodbURL, defaultImagePath, jwtActivationKey}
+const smtpUserName = process.env.SMTP_USERNAME || '';
+const smtpUserPassword = process.env.SMTP_PASSWORD || '';
+const clientURL = process.env.CLIENT_URL || '';
+
+module.exports = {serverPort, mongodbURL, defaultImagePath, jwtActivationKey, smtpUserName, smtpUserPassword, clientURL}
+
